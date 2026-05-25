@@ -30,8 +30,8 @@ badgeStyle.innerHTML = `
     box-shadow: 0 12px 40px rgba(0,0,0,0.2);
   }
   .figma-float-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 200px;
+    height: 200px;
     transition: transform 0.3s ease;
   }
   .figma-float-btn:hover svg {
