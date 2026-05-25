@@ -50,7 +50,7 @@ document.head.appendChild(badgeStyle);
 const figmaBadge = document.createElement('a');
 
 // ↓↓↓ GANTI LINK FIGMA LU DI SINI NYET ↓↓↓
-figmaBadge.href = "LINK_FIGMA_LU_TARUH_SINI_TENG"; 
+figmaBadge.href = "https://www.figma.com/design/NUgTLBpGRpC9BD4djufWKn/I-Love-Binus?node-id=380-559&t=UmboF8IsH1XtfpGS-1"; 
 // ↑↑↑ JANGAN SAMPE LUPA ↑↑↑
 
 figmaBadge.target = "_blank";
