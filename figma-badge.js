@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Bikin elemen <a>
   const figmaBadge = document.createElement('a');
-  figmaBadge.href = "LINK_FIGMA_LU_TARUH_SINI_TENG";
+  figmaBadge.href = "https://www.figma.com/design/NUgTLBpGRpC9BD4djufWKn/I-Love-Binus?node-id=380-559&t=uvNVbyN9WldG1SYn-1";
   figmaBadge.target = "_blank";
   figmaBadge.rel = "noopener noreferrer";
   
