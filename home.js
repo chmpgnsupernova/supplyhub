@@ -49,23 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
   let touchStartX = 0;
   let touchEndX   = 0;
 
-  carousel.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-    stopAutoplay();
-  }, { passive: true });
+  // The banner is not on every page that loads this script; without this
+  // guard the TypeError stops every handler below from being attached.
+  if (carousel && slides.length) {
+    carousel.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoplay();
+    }, { passive: true });
 
-  carousel.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 40) {
-      goToSlide(diff > 0 ? current + 1 : current - 1);
-    }
+    carousel.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        goToSlide(diff > 0 ? current + 1 : current - 1);
+      }
+      startAutoplay();
+    }, { passive: true });
+
+    // Init
+    goToSlide(0);
     startAutoplay();
-  }, { passive: true });
-
-  // Init
-  goToSlide(0);
-  startAutoplay();
+  }
 
 
   /* =====================================================
@@ -152,8 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  setInterval(cyclePlaceholder, 3500);
-  cyclePlaceholder();
+  if (searchInput) {
+    setInterval(cyclePlaceholder, 3500);
+    cyclePlaceholder();
+  }
 
 
   /* =====================================================
